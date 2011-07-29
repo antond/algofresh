@@ -20,12 +20,16 @@ class Fibonacci
   end
 
   def generate
-    resulting_ary = (@n == 0) ? [0] : []
+    resulting_ary = []
     case @algorithm
     when :exponential
-      @n.times { |i| resulting_ary << exponential(i) }
+      for i in 0...@n
+        resulting_ary << exponential(i)
+      end
     when :polynomial
-      @n.times { |i| resulting_ary << polynomial(i) }
+      for i in 0...@n
+        resulting_ary << polynomial(i)
+      end
     end
     (resulting_ary.size == 1) ? resulting_ary.first : resulting_ary
   end
